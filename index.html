@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HerSoulSociety 心靈療癒所｜把迷惘慢慢走成光</title>
+<meta name="description" content="HerSoulSociety 心靈療癒所：願每一個有緣遇見的人，都找到生命中有力量的信仰。這裡收錄我們正在進行與過去舉辦的活動。">
+<link rel="icon" href="assets/hs_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+
+<!-- 進場畫面 -->
+<div id="loader" role="status" aria-label="載入中">
+  <i class="l-bloom"></i>
+  <div class="l-core">
+    <svg class="l-ring" viewBox="0 0 200 200" aria-hidden="true">
+      <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B7A3E0"/><stop offset=".5" stop-color="#E58E8A"/><stop offset="1" stop-color="#F2C98A"/></linearGradient></defs>
+      <circle class="bg" cx="100" cy="100" r="92"/><circle class="fg" id="lRing" cx="100" cy="100" r="92"/>
+    </svg>
+    <i class="l-orbit"></i>
+    <img src="assets/hs_logo.png" alt="">
+  </div>
+  <p class="l-tip" id="lTip">緣分，正在靠近</p>
+  <p class="l-pct"><span id="lPct">0</span> %</p>
+</div>
+
+<!-- 切換分頁的光幕 -->
+<div id="veil" aria-hidden="true">
+  <div class="v-in"><small id="vEn"></small><strong id="vZh"></strong><span id="vTip"></span></div>
+</div>
+
+<div class="aurora" aria-hidden="true">
+  <i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i><i class="orb o4"></i>
+</div>
+<canvas id="motes" aria-hidden="true"></canvas>
+<div id="glow" aria-hidden="true"></div>
+<div id="progress" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top">
+    <img src="assets/hs_logo.png" alt="HerSoulSociety 標誌">
+    <span>HerSoulSociety</span>
+  </a>
+  <nav>
+    <a href="#about">關於我們</a>
+    <a href="#now">進行中</a>
+    <a href="#past">過去活動</a>
+    <a href="#film">形象影片</a>
+    <a href="#contact" class="pill">聯絡與追蹤</a>
+  </nav>
+</header>
+
+<!-- 手機底部分頁列 -->
+<nav class="tabbar" aria-label="分頁">
+  <a href="#about">關於</a>
+  <a href="#now">進行中</a>
+  <a href="#past">足跡</a>
+  <a href="#film">影片</a>
+  <a href="#contact">聯絡</a>
+</nav>
+
+<!-- 角落輪播的小提示 -->
+<aside id="hint" aria-live="polite">
+  <i>✦</i><span id="hintText"></span>
+  <button id="hintClose" aria-label="關閉小提示">×</button>
+</aside>
+
+<main id="top" data-en="Home" data-zh="首頁" data-tip="有緣遇見，就不是偶然。">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <p class="eyebrow fade" style="--d:.1s">Her Soul Society ・ 心靈療癒所</p>
+    <h1 class="split" data-text="把迷惘|慢慢走成光"></h1>
+    <p class="lead fade" style="--d:1.5s">
+      有緣遇見，就不是偶然。<br>
+      願每一個來到這裡的人，都找到生命中有力量的信仰。
+    </p>
+    <div class="cta fade" style="--d:1.8s">
+      <a class="btn solid" href="#now"><span>看看我們正在做的事</span></a>
+      <a class="btn ghost" href="#about"><span>認識我們的心願</span></a>
+    </div>
+    <a class="scroll-hint fade" style="--d:2.3s" href="#about" aria-label="往下捲動">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- 跑馬燈 -->
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Destiny</span><b>緣分</b><span>Faith</span><b>有力量的信仰</b><span>Blessing</span><b>法王加持</b><span>Manifest</span><b>顯化為可能</b><span>Better</span><b>讓每個人變好</b>
+      <span>Destiny</span><b>緣分</b><span>Faith</span><b>有力量的信仰</b><span>Blessing</span><b>法王加持</b><span>Manifest</span><b>顯化為可能</b><span>Better</span><b>讓每個人變好</b>
+    </div>
+  </div>
+
+  <!-- 關於 -->
+  <section class="about wrap" id="about" data-en="About" data-zh="關於我們" data-tip="願你找到，生命中有力量的信仰。">
+    <div class="about-logo reveal">
+      <div class="ring"><img src="assets/hs_logo.png" alt=""></div>
+    </div>
+    <div class="about-text">
+      <p class="label reveal">About ・ 關於我們</p>
+      <h2 class="reveal">遇見，是緣分；<br>變好，是我們的心願。</h2>
+      <p class="reveal">
+        曾經，我也在迷霧裡尋找方向。直到某些特別的經歷，讓我開始重新理解自己、生活與內在的力量。
+      </p>
+      <p class="reveal">
+        所以我們相信，每一個走到這裡的人，都是帶著緣分而來。HerSoulSociety 想陪你找到生命中有力量的信仰——
+        透過法王的加持力，讓心裡的願，一步一步顯化為可能。
+      </p>
+      <p class="reveal">
+        祈福音樂會、瑜珈、手作、牌卡、職涯午茶聚……我們辦的活動有很多種樣子，心願始終只有一個：<strong class="hl">讓每個人變好。</strong>
+      </p>
+      <ul class="pillars">
+        <li class="reveal"><em>01</em><strong>緣分</strong><span>每一次相遇，都有它的意義。</span></li>
+        <li class="reveal"><em>02</em><strong>信仰</strong><span>找到那份讓你有力量的相信。</span></li>
+        <li class="reveal"><em>03</em><strong>顯化</strong><span>法王加持，讓一切成為可能。</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="whisper" data-text="願每一個有緣遇見的人，|都找到生命中有力量的信仰。"></div>
+
+  <!-- 進行中 -->
+  <section class="wrap" id="now" data-en="Now" data-zh="進行中" data-tip="形式有很多種，心願只有一個。">
+    <p class="label reveal"><i class="dot"></i>Now ・ 進行中</p>
+    <h2 class="reveal">我們正在做的事</h2>
+    <p class="tip reveal">活動的樣子有很多種，心願只有一個——讓來的人，變得更好。</p>
+    <div class="now-list" id="nowList"></div>
+  </section>
+
+  <div class="whisper" data-text="法王加持，|讓一切顯化為可能。"></div>
+
+  <!-- 過去活動 -->
+  <section class="wrap" id="past" data-en="Journey" data-zh="過去活動" data-tip="每一場相聚，都是緣分的顯化。">
+    <p class="label reveal">Journey ・ 過去活動</p>
+    <h2 class="reveal">一路走來的足跡</h2>
+    <p class="tip reveal">每一場相聚，都是一次緣分的顯化。</p>
+    <div class="timeline" id="pastList"><i class="line"><b></b></i></div>
+  </section>
+
+  <!-- 形象影片 -->
+  <section class="film" id="film" data-en="Brand Film" data-zh="形象影片" data-tip="先相信，然後看見。">
+    <div class="wrap">
+      <p class="label reveal">Brand Film ・ 形象影片</p>
+      <h2 class="reveal">用一分半鐘，認識我們</h2>
+      <p class="tip reveal">先相信，然後看見。</p>
+    </div>
+    <div class="film-frame" id="filmFrame">
+      <video id="filmVideo" src="assets/brand-film.mp4" poster="assets/film-poster.jpg" preload="none" playsinline></video>
+      <button class="play" id="filmPlay" aria-label="播放形象影片">
+        <svg viewBox="0 0 24 24" width="30" height="30"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <div class="whisper" data-text="我們只有一個心願：|讓每個人，變得更好。"></div>
+
+  <!-- 聯絡 -->
+  <section class="contact wrap" id="contact" data-en="Contact" data-zh="聯絡與追蹤" data-tip="靠近一點，讓好事發生。">
+    <p class="label reveal">Contact ・ 聯絡與追蹤</p>
+    <h2 class="reveal">想靠近一點嗎？</h2>
+    <p class="tip reveal">你會讀到這裡，不是偶然。</p>
+    <p class="reveal sub">最新活動會先在粉絲專頁公布，歡迎追蹤，或直接傳訊息給我們。</p>
+    <div class="contact-cards">
+      <a class="c-card reveal" href="https://www.facebook.com/share/1E7W6JuRWN/?mibextid=wwXIfr" target="_blank" rel="noopener">
+        <small>Facebook</small>
+        <strong>HER SOUL Society－心靈療癒所</strong>
+        <span>前往粉絲專頁 →</span>
+      </a>
+      <div class="c-card reveal">
+        <small>Location</small>
+        <strong>台北・信義安和捷運站</strong>
+        <span>Taipei, Taiwan</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span class="f-brand">HerSoulSociety</span>
+  <span class="f-wish">願每個遇見這裡的人，都帶著祝福回去，把光分給身邊的人。</span>
+  <span>© <span id="year"></span> HerSoulSociety 心靈療癒所</span>
+</footer>
+
+<script src="events.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
