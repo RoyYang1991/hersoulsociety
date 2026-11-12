@@ -42,7 +42,7 @@
         .map(
           (e) => `
       <article class="now-card reveal">
-        <div class="now-media">${e.image ? `<img src="${esc(e.image)}" alt="${esc(e.title)}" loading="lazy">` : `<div class="now-date"><small>${e.start.slice(0, 4)}</small><b>${e.start.slice(5, 7)}.${e.start.slice(8)}</b><span>${esc(e.type || "")}</span></div>`}</div>
+        <div class="now-media${e.image ? " has-img" : ""}">${e.image ? `<img class="bg" src="${esc(e.image)}" alt="" aria-hidden="true" loading="lazy"><img class="poster" src="${esc(e.image)}" alt="${esc(e.title)}" loading="lazy">` : `<div class="now-date"><small>${e.start.slice(0, 4)}</small><b>${e.start.slice(5, 7)}.${e.start.slice(8)}</b><span>${esc(e.type || "")}</span></div>`}</div>
         <div class="now-body">
           <span class="badge"><i class="dot"></i>${today < e.start ? "即將開始" : "進行中"}・${esc(e.type || "活動")}</span>
           <h3>${esc(e.title)}${flag(e)}</h3>
@@ -73,7 +73,7 @@
             <div class="tags">${tags(e)}</div>
             ${link(e)}
           </div>
-          ${e.image ? `<div class="t-thumb"><img src="${esc(e.image)}" alt="${esc(e.title)}" loading="lazy"></div>` : ""}
+          ${e.image ? `<div class="t-thumb"><img class="bg" src="${esc(e.image)}" alt="" aria-hidden="true" loading="lazy"><img class="poster" src="${esc(e.image)}" alt="${esc(e.title)}" loading="lazy"></div>` : ""}
         </article>
       </div>`;
           })

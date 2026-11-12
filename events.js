@@ -18,6 +18,20 @@
  */
 window.HSS_EVENTS = [
   {
+    title: "宇宙偏愛你｜不丹法王加持 × 缽音療癒音樂會",
+    type: "新年祈福音樂會",
+    start: "2027-01-01",
+    end: "2027-01-01",
+    dateText: "2027.01.01（五）14:00–17:00",
+    place: "台北 W Hotel",
+    summary:
+      "2027 新年第一天，把第一個下午留給自己。在不丹法王的加持中迎接新的一年，以虔誠心意為自己與所愛的人祈願，再伴著缽音放慢呼吸，聽見心裡的聲音。",
+    image: "assets/events/2027-01-01_universe-loves-you.webp",
+    tags: ["新年好運・祈福順遂", "功德主加持・緣分善轉", "缽音療癒・回歸平靜"],
+    link: "https://www.facebook.com/share/1E7W6JuRWN/?mibextid=wwXIfr",
+    linkText: "私訊粉專報名",
+  },
+  {
     title: "「科技業入行指南」職涯午茶聚",
     type: "職涯午茶聚",
     start: "2026-11-15",
