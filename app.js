@@ -32,9 +32,9 @@
   const tags = (e) => (e.tags || []).map((t) => `<i>${esc(t)}</i>`).join("");
   const flag = (e) => (e.sample ? `<span class="sample-flag">示意</span>` : "");
   const link = (e) =>
-    e.link ? `<a class="more" href="${esc(e.link)}" target="_blank" rel="noopener">${esc(e.linkText || "了解更多")} →</a>` : "";
+    e.link ? `<a class="more" href="${esc(e.link)}"${/^https?:/.test(e.link) ? ' target="_blank" rel="noopener"' : ""}>${esc(e.linkText || "了解更多")} →</a>` : "";
 
-  const now = events.filter((e) => !isPast(e)).sort((a, b) => !a.end - !b.end || a.start.localeCompare(b.start)); // 有日期的活動排前面，長期企劃排後面
+  const now = events.filter((e) => !isPast(e)).sort((a, b) => !b.featured - !a.featured || !a.end - !b.end || a.start.localeCompare(b.start)); // 主打活動最前面，再來是有日期的活動，長期企劃排後面
   const past = events.filter(isPast).sort((a, b) => b.start.localeCompare(a.start));
 
   $("#nowList").innerHTML = now.length

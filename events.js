@@ -14,6 +14,7 @@
  *   tags      標籤陣列
  *   link      按鈕連結（選填）
  *   linkText  按鈕文字（選填）
+ *   featured  true = 主打活動，排在「進行中」第一個
  *   sample    true = 示意內容，畫面上會標「示意」；換成真實活動後刪掉這一行
  */
 window.HSS_EVENTS = [
@@ -28,8 +29,9 @@ window.HSS_EVENTS = [
       "2027 新年第一天，把第一個下午留給自己。在不丹法王的加持中迎接新的一年，以虔誠心意為自己與所愛的人祈願，再伴著缽音放慢呼吸，聽見心裡的聲音。",
     image: "assets/events/2027-01-01_universe-loves-you.webp",
     tags: ["新年好運・祈福順遂", "功德主加持・緣分善轉", "缽音療癒・回歸平靜"],
-    link: "https://www.facebook.com/share/1E7W6JuRWN/?mibextid=wwXIfr",
-    linkText: "私訊粉專報名",
+    link: "newyear-2027.html",
+    linkText: "看完整介紹",
+    featured: true,
   },
   {
     title: "「科技業入行指南」職涯午茶聚",
