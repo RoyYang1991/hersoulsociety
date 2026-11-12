@@ -160,38 +160,15 @@
 
   $("#year").textContent = new Date().getFullYear();
 
-  /* ── 切換分頁：光從點擊處暈開，蓋住畫面後換到目標區塊 ── */
-  const veil = $("#veil");
-  let busy = false;
+  /* ── 頁內連結：同一頁直接平滑捲動，不蓋光幕（loading 畫面只在剛進站時出現） ── */
   const topOf = (el) => (el.id === "top" ? 0 : el.getBoundingClientRect().top + scrollY - 16);
   $$('a[href^="#"]').forEach((a) =>
     a.addEventListener("click", (ev) => {
       const target = document.getElementById(a.getAttribute("href").slice(1));
       if (!target) return;
       ev.preventDefault();
-      if (reduce) return scrollTo({ top: topOf(target), behavior: "instant" });
-      if (busy) return;
-      busy = true;
-      $("#vEn").textContent = target.dataset.en || "";
-      $("#vZh").textContent = target.dataset.zh || "";
-      $("#vTip").textContent = target.dataset.tip || "";
-      veil.style.setProperty("--x", ev.clientX + "px");
-      veil.style.setProperty("--y", ev.clientY + "px");
-      veil.classList.remove("leave");
-      veil.classList.add("show");
-      const fresh = $$(".reveal", target);
-      setTimeout(() => {
-        // 光幕蓋住時換位置，並把目標區塊的內容重設成「尚未顯現」
-        fresh.forEach((el) => { el.style.transition = "none"; el.classList.remove("in"); });
-        scrollTo({ top: topOf(target), behavior: "instant" });
-        void document.body.offsetHeight;
-        fresh.forEach((el) => (el.style.transition = ""));
-      }, 900);
-      setTimeout(() => {
-        veil.classList.add("leave");
-        fresh.forEach((el) => io.observe(el));
-      }, 1650);
-      setTimeout(() => { veil.classList.remove("show", "leave"); busy = false; }, 2500);
+      scrollTo({ top: topOf(target), behavior: reduce ? "instant" : "smooth" });
+      history.replaceState(null, "", a.getAttribute("href"));
     })
   );
 
