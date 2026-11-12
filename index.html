@@ -8,8 +8,9 @@
 <link rel="icon" href="assets/hs_logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@400;600;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="feature.css">
 </head>
 <body class="loading">
 
@@ -46,6 +47,7 @@
     <span>HerSoulSociety</span>
   </a>
   <nav>
+    <a href="#newyear" class="ny-nav">1/1 音樂會</a>
     <a href="#about">關於我們</a>
     <a href="#now">進行中</a>
     <a href="#past">過去活動</a>
@@ -56,6 +58,7 @@
 
 <!-- 手機底部分頁列 -->
 <nav class="tabbar" aria-label="分頁">
+  <a href="#newyear" class="ny-tab">1/1</a>
   <a href="#about">關於</a>
   <a href="#now">進行中</a>
   <a href="#past">足跡</a>
@@ -71,9 +74,141 @@
 
 <main id="top" data-en="Home" data-zh="首頁" data-tip="有緣遇見，就不是偶然。">
 
-  <!-- 首屏 -->
+  <!-- 主打活動：點進來的第一屏（換主打活動時改這一整段） -->
+  <section id="newyear" data-en="New Year's Day 2027" data-zh="宇宙偏愛你" data-tip="新的一年，從被祝福開始。">
+    <div class="ny-sky" aria-hidden="true"><i></i><i></i><i></i></div>
+    <canvas id="nyStars" aria-hidden="true"></canvas>
+
+    <div class="ny-hero">
+      <div>
+        <span class="ny-badge fade" style="--d:.1s"><i></i>主打活動・即將開始</span>
+        <p class="ny-kicker fade" style="--d:.2s"><span></span>2027 新年第一天<span></span></p>
+        <h1 class="ny-title" aria-label="宇宙偏愛你">
+          <span style="--i:0">宇</span><span style="--i:1">宙</span><span style="--i:2">偏</span><span style="--i:3">愛</span><span style="--i:4">你</span>
+        </h1>
+        <p class="ny-sub fade" style="--d:1s">不丹法王加持 <em>×</em> 缽音療癒音樂會</p>
+        <ul class="ny-facts fade" style="--d:1.2s">
+          <li><small>Date</small><b>2027.01.01（五）</b></li>
+          <li><small>Time</small><b>14:00 – 17:00</b></li>
+          <li><small>Venue</small><b>台北 W Hotel</b></li>
+        </ul>
+        <div class="ny-count fade" style="--d:1.4s" id="nyCount">
+          <span class="cl">距離新年第一個下午</span>
+          <div class="ny-cd"><b id="cdD">--</b><small>天</small><b id="cdH">--</b><small>時</small><b id="cdM">--</b><small>分</small><b id="cdS">--</b><small>秒</small></div>
+        </div>
+        <div class="ny-cta fade" style="--d:1.6s">
+          <a class="ny-btn gold" href="https://www.facebook.com/share/1E7W6JuRWN/?mibextid=wwXIfr" target="_blank" rel="noopener"><span>私訊粉專報名</span></a>
+          <a class="ny-btn line" href="#ny-rise"><span>先聽聽這場的故事</span></a>
+        </div>
+      </div>
+      <div class="ny-poster fade" style="--d:.5s">
+        <div class="ny-tilt" id="nyTilt">
+          <img src="assets/events/2027-01-01_universe-loves-you.webp" alt="宇宙偏愛你 活動海報：2027.01.01（五）14:00–17:00，台北 W Hotel">
+          <i class="ny-sheen"></i>
+        </div>
+      </div>
+    </div>
+    <a class="ny-scroll fade" style="--d:2.2s" href="#ny-rise">Scroll ↓</a>
+
+    <p class="ny-lead reveal">新的一年，<br>從被祝福開始。</p>
+
+    <div class="ny-ch" id="ny-rise" data-en="Chapter I" data-zh="起" data-tip="舊的一年，你辛苦了。">
+      <div class="ny-mark reveal"><b>起</b><small>Chapter I</small></div>
+      <div class="ny-body">
+        <h2 class="reveal">舊的一年，<br>你辛苦了。</h2>
+        <p class="reveal">這一年，你可能趕過很多期限，扛過很多別人看不見的事。有些願望實現了，有些還在路上；有些人來了，有些人走了。</p>
+        <p class="reveal">我們總是急著往前跑，卻很少停下來，好好跟過去的自己說一聲：謝謝你，撐到了這裡。</p>
+        <blockquote class="reveal">在迎接新的開始之前，<br>先溫柔地，把舊的一年放下。</blockquote>
+      </div>
+    </div>
+
+    <div class="ny-ch">
+      <div class="ny-mark reveal"><b>承</b><small>Chapter II</small></div>
+      <div class="ny-body">
+        <h2 class="reveal">為什麼，<br>是新年第一天？</h2>
+        <p class="reveal">一年的第一天，像一張剛攤開的白紙。你在這一天放進什麼心意，往後的日子就會沿著它慢慢展開。</p>
+        <p class="reveal">所以這一次，我們不把它交給補眠、也不交給人潮，而是把新年的第一個下午，留給一場安靜而盛大的祝福——在台北 W Hotel，由不丹法王親自加持，讓 2027 從「被好好祝福」開始。</p>
+        <div class="ny-pillars">
+          <article class="ny-pl reveal"><em>01</em><h3>新年好運・祈福順遂</h3><p>迎接 2027，為新的一年開啟好運。把對未來的期待，化成清楚的祈願。</p></article>
+          <article class="ny-pl reveal"><em>02</em><h3>功德主加持・緣分善轉</h3><p>以虔誠心意，為自己與所愛的人祈願。願卡住的關係與緣分，慢慢往好的方向轉。</p></article>
+          <article class="ny-pl reveal"><em>03</em><h3>缽音療癒・回歸平靜</h3><p>放慢呼吸，聽見心裡的聲音。讓忙了一整年的身心，真正安靜下來。</p></article>
+        </div>
+      </div>
+    </div>
+
+    <div class="ny-ch">
+      <div class="ny-mark reveal"><b>轉</b><small>Chapter III</small></div>
+      <div class="ny-body">
+        <h2 class="reveal">當第一聲缽音響起，<br>世界忽然安靜了。</h2>
+        <div class="ny-bowl reveal" aria-hidden="true">
+          <i></i><i></i><i></i><i></i>
+          <svg viewBox="0 0 120 80"><defs><linearGradient id="nyBowlG" x1="0" x2="1"><stop offset="0" stop-color="#9A6A2E"/><stop offset=".45" stop-color="#F7E2B0"/><stop offset="1" stop-color="#B07E38"/></linearGradient></defs>
+            <ellipse cx="60" cy="18" rx="50" ry="10" fill="#6E4A1F"/><path d="M10 18 Q12 70 60 72 Q108 70 110 18 Q108 28 60 28 Q12 28 10 18Z" fill="url(#nyBowlG)"/><ellipse cx="60" cy="18" rx="50" ry="10" fill="none" stroke="#F7E2B0" stroke-width="1.5" opacity=".8"/></svg>
+        </div>
+        <p class="reveal">聲音一圈一圈地擴散，穿過身體，也穿過那些一直轉個不停的念頭。你會發現，原來焦慮可以被放下，原來呼吸可以這麼慢。</p>
+        <p class="reveal">在這樣的安靜裡，接受法王的加持。那不是要你相信什麼奇蹟，而是讓你重新想起：你本來就值得被祝福，宇宙一直都偏愛著你。</p>
+        <blockquote class="reveal">信仰，不一定是答案；<br>它是讓你有力量，繼續往前走的那份相信。</blockquote>
+      </div>
+    </div>
+
+    <div class="ny-ch">
+      <div class="ny-mark reveal"><b>合</b><small>Chapter IV</small></div>
+      <div class="ny-body">
+        <h2 class="reveal">帶著祝福，<br>走進 2027。</h2>
+        <p class="reveal">音樂會結束時，天色會慢慢暗下來，城市的燈一盞盞亮起。你帶走的不只是一個美好的下午，而是一份放在心上的祝福、一個清楚的新年心願，和一顆比來時更安定的心。</p>
+        <p class="reveal">願這份祝福陪你走過新的一年，也願你把這道光，分給身邊重要的人。</p>
+      </div>
+    </div>
+
+    <div class="ny-block">
+      <p class="ny-label reveal">What you'll receive</p>
+      <h2 class="reveal">這個下午，你會帶走</h2>
+      <div class="ny-gain">
+        <article class="ny-g reveal"><i>✦</i><h3>一份新年的加持</h3><p>由不丹法王親自加持，讓新的一年從祝福開始。</p></article>
+        <article class="ny-g reveal" style="--rd:.12s"><i>☾</i><h3>真正的安靜</h3><p>在缽音裡放下整年的疲憊，讓身心重新找回平衡。</p></article>
+        <article class="ny-g reveal" style="--rd:.24s"><i>❀</i><h3>為所愛的人祈願</h3><p>把對家人、伴侶、朋友的心意，好好地說出來。</p></article>
+        <article class="ny-g reveal"><i>✧</i><h3>一個清楚的心願</h3><p>在安靜中聽見自己，知道 2027 最想往哪裡走。</p></article>
+        <article class="ny-g reveal" style="--rd:.12s"><i>◎</i><h3>有力量的信仰</h3><p>找到那份讓你在低潮時，依然願意相信的力量。</p></article>
+        <article class="ny-g reveal" style="--rd:.24s"><i>♡</i><h3>同頻的緣分</h3><p>和一群同樣想讓生活變好的人，在新年第一天相遇。</p></article>
+      </div>
+    </div>
+
+    <div class="ny-block">
+      <p class="ny-label reveal">Is this for you</p>
+      <h2 class="reveal">如果你也是這樣，<br>這場就是為你準備的</h2>
+      <ul class="ny-for">
+        <li class="reveal">這一年過得很滿，想好好替自己畫下句點</li>
+        <li class="reveal">對新的一年有期待，想用祝福開一個好頭</li>
+        <li class="reveal">想為家人、伴侶或重要的人祈願</li>
+        <li class="reveal">最近心很亂，想找回安定的感覺</li>
+        <li class="reveal">一直想體驗缽音療癒，卻還沒有機會</li>
+        <li class="reveal">不必有任何宗教背景，只要帶著一顆願意的心</li>
+      </ul>
+    </div>
+
+    <div class="ny-join" id="ny-join">
+      <div class="ny-ticket reveal">
+        <div class="ny-tl">
+          <p class="ny-label">Event Info</p>
+          <h2>宇宙偏愛你</h2>
+          <p class="ny-tsub">不丹法王加持 × 缽音療癒音樂會</p>
+          <dl>
+            <dt>日期</dt><dd>2027.01.01（五）新年第一天</dd>
+            <dt>時間</dt><dd>14:00 – 17:00</dd>
+            <dt>地點</dt><dd>台北 W Hotel</dd>
+            <dt>報名</dt><dd>私訊 HerSoulSociety 粉絲專頁，我們會回覆名額與詳細資訊</dd>
+          </dl>
+          <a class="ny-btn gold" href="https://www.facebook.com/share/1E7W6JuRWN/?mibextid=wwXIfr" target="_blank" rel="noopener"><span>私訊粉專報名 →</span></a>
+        </div>
+        <div class="ny-tr"><img src="assets/events/2027-01-01_universe-loves-you.webp" alt="" loading="lazy"></div>
+      </div>
+    </div>
+
+    <p class="ny-final reveal">你會讀到這裡，不是偶然。<br><b>宇宙，一直都偏愛著你。</b></p>
+  </section>
+
+  <!-- 品牌首屏 -->
   <section class="hero">
-    <a class="feature-pill fade" style="--d:.05s" href="newyear-2027.html"><i>NEW</i><span class="fp-long">2027.01.01 新年第一天｜宇宙偏愛你・不丹法王加持 × 缽音療癒音樂會</span><span class="fp-short">1/1 宇宙偏愛你・新年音樂會</span><b>→</b></a>
     <p class="eyebrow fade" style="--d:.1s">Her Soul Society ・ 心靈療癒所</p>
     <h1 class="split" data-text="把迷惘|慢慢走成光"></h1>
     <p class="lead fade" style="--d:1.5s">
@@ -189,5 +324,6 @@
 
 <script src="events.js"></script>
 <script src="app.js"></script>
+<script src="feature.js"></script>
 </body>
 </html>

@@ -1,0 +1,135 @@
+/* ───── 首頁第一屏：主打活動（2027 新年音樂會）
+   配色取自海報：夜紫、絲絨酒紅、金。所有樣式都限定在 #newyear 底下，不影響其他區塊。 ───── */
+#newyear{
+  --night:#170F2B; --gold:#E9C27A; --gold2:#F7E2B0; --cream:#F6EEF3; --soft:#C9B8D2; --magenta:#C2457E;
+  position:relative;overflow:clip;color:var(--cream);
+  background:linear-gradient(180deg,#170F2B 0%,#2C1A45 30%,#3D1C48 70%,#4A1D45 92%,#FBF6F1 100%);
+}
+#newyear .ny-sky{position:absolute;inset:0;pointer-events:none;filter:blur(80px)}
+#newyear .ny-sky i{position:absolute;border-radius:50%;opacity:.5}
+#newyear .ny-sky i:nth-child(1){width:50vw;height:50vw;left:-12vw;top:-8vw;background:#5B2E8C;animation:nyd1 26s ease-in-out infinite alternate}
+#newyear .ny-sky i:nth-child(2){width:44vw;height:44vw;right:-12vw;top:22%;background:#B23A6E;animation:nyd2 30s ease-in-out infinite alternate}
+#newyear .ny-sky i:nth-child(3){width:40vw;height:40vw;left:20vw;top:58%;background:#C98A3A;opacity:.28;animation:nyd1 34s ease-in-out infinite alternate-reverse}
+@keyframes nyd1{to{transform:translate(12vw,10vh) scale(1.15)}}
+@keyframes nyd2{to{transform:translate(-14vw,-8vh) scale(.9)}}
+#nyStars{position:sticky;top:0;display:block;width:100%;height:100vh;margin-bottom:-100vh;pointer-events:none}
+#newyear > *:not(.ny-sky):not(#nyStars){position:relative}
+
+#newyear h2{font-weight:600;font-size:clamp(1.8rem,4.2vw,2.7rem);line-height:1.45;margin:.2em 0 .8em}
+#newyear .ny-label{font-family:var(--en);font-style:italic;font-size:1.15rem;letter-spacing:.2em;color:var(--gold)}
+#newyear .ny-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;padding:14px 30px;border-radius:999px;font-weight:400;letter-spacing:.06em;overflow:hidden;transition:transform .4s var(--ease)}
+#newyear .ny-btn:hover{transform:translateY(-3px)}
+#newyear .ny-btn span{position:relative;z-index:1}
+#newyear .ny-btn.gold{color:var(--night);background:linear-gradient(135deg,var(--gold2),var(--gold) 55%,#C9963F);box-shadow:0 12px 40px rgba(233,194,122,.35)}
+#newyear .ny-btn.gold::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.7) 50%,transparent 70%);transform:translateX(-120%);animation:nyshine 3.6s 2s ease-in-out infinite}
+@keyframes nyshine{40%,100%{transform:translateX(120%)}}
+#newyear .ny-btn.line{border:1px solid rgba(233,194,122,.5);color:var(--gold2)}
+#newyear .ny-btn.line:hover{background:rgba(233,194,122,.1)}
+
+/* 首屏 */
+.ny-hero{min-height:100svh;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;width:min(1120px,calc(100% - 40px));margin:0 auto;padding:110px 0 60px}
+.ny-badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:999px;font-size:.85rem;letter-spacing:.1em;color:var(--gold2);background:rgba(233,194,122,.12);border:1px solid rgba(233,194,122,.3)}
+.ny-badge i{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(233,194,122,.7);animation:nyping 2s infinite}
+@keyframes nyping{70%{box-shadow:0 0 0 10px rgba(233,194,122,0)}100%{box-shadow:0 0 0 0 rgba(233,194,122,0)}}
+.ny-kicker{display:flex;align-items:center;gap:16px;margin-top:18px;font-family:var(--serif);letter-spacing:.4em;color:var(--gold2)}
+.ny-kicker span{width:48px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.ny-kicker span:last-child{transform:scaleX(-1)}
+.ny-title{font-family:var(--serif);font-weight:900;font-size:clamp(3.4rem,10vw,6.6rem);line-height:1.15;letter-spacing:.06em;margin:.15em 0 .1em;white-space:nowrap}
+.ny-title span{display:inline-block;background:linear-gradient(180deg,#FFF3D2 10%,var(--gold) 55%,#A9762F 95%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 4px 24px rgba(233,194,122,.35));opacity:0;transform:translateY(40px) scale(.9);animation:nyrise 1.2s calc(.3s + var(--i)*.13s) var(--ease) forwards}
+@keyframes nyrise{to{opacity:1;transform:none}}
+body.loading .ny-title span{animation-play-state:paused}
+.ny-sub{font-family:var(--serif);font-weight:600;font-size:clamp(1.1rem,2.4vw,1.5rem);letter-spacing:.1em}
+.ny-sub em{font-style:normal;color:var(--gold);margin:0 .3em}
+.ny-facts{list-style:none;display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 20px}
+.ny-facts li{padding:10px 18px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(233,194,122,.22)}
+.ny-facts small{display:block;font-family:var(--en);font-style:italic;color:var(--gold);letter-spacing:.15em;font-size:.85rem;line-height:1.3}
+.ny-facts b{font-weight:500}
+.ny-count{margin-bottom:28px}
+.ny-count .cl{font-size:.88rem;color:var(--soft);letter-spacing:.15em}
+.ny-cd{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.ny-cd b{font-family:var(--en);font-size:2.6rem;font-weight:500;color:var(--gold2);min-width:1.4em;text-align:right;line-height:1.2}
+.ny-cd small{margin-right:10px;color:var(--soft)}
+.ny-cta{display:flex;flex-wrap:wrap;gap:14px}
+.ny-poster{perspective:1200px}
+.ny-tilt{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.55),0 0 0 1px rgba(233,194,122,.3),0 0 80px rgba(194,69,126,.25);
+  transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .6s var(--ease);animation:nyfloat 7s ease-in-out infinite}
+@keyframes nyfloat{50%{translate:0 -12px}}
+.ny-sheen{position:absolute;inset:0;background:radial-gradient(circle at var(--mx,30%) var(--my,20%),rgba(255,240,210,.35),transparent 45%);mix-blend-mode:screen;pointer-events:none}
+.ny-scroll{display:block;width:fit-content;margin:-30px auto 0;padding:10px;color:var(--gold);font-family:var(--en);font-style:italic;letter-spacing:.2em;font-size:.95rem;text-align:center;animation:nybob 2.4s ease-in-out infinite}
+@keyframes nybob{50%{transform:translateY(8px)}}
+
+.ny-lead{text-align:center;font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.4rem);letter-spacing:.12em;color:var(--gold2);padding:70px 20px 40px;text-shadow:0 0 30px rgba(233,194,122,.35)}
+
+/* 起承轉合 */
+.ny-ch{display:grid;grid-template-columns:150px 1fr;gap:44px;width:min(980px,calc(100% - 40px));margin:0 auto;padding:80px 0;border-top:1px solid rgba(233,194,122,.14)}
+.ny-mark{position:sticky;top:110px;align-self:start;text-align:center}
+.ny-mark b{display:grid;place-items:center;width:110px;height:110px;margin:0 auto;border-radius:50%;font-family:var(--serif);font-weight:900;font-size:3rem;color:var(--night);
+  background:radial-gradient(circle at 35% 30%,#FFF3D2,var(--gold) 55%,#A9762F);box-shadow:0 0 0 8px rgba(233,194,122,.1),0 0 60px rgba(233,194,122,.35)}
+.ny-mark small{display:block;margin-top:12px;font-family:var(--en);font-style:italic;letter-spacing:.2em;color:var(--gold)}
+.ny-body p{font-size:1.06rem;color:#E6DAE6;margin-bottom:1.1em;max-width:40em}
+.ny-body blockquote{margin:30px 0 0;padding:22px 28px;border-left:2px solid var(--gold);font-family:var(--serif);font-size:1.25rem;line-height:1.8;color:var(--gold2);background:linear-gradient(90deg,rgba(233,194,122,.1),transparent)}
+.ny-pillars{display:grid;gap:16px;margin-top:28px}
+.ny-pl{position:relative;padding:22px 26px 20px 92px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(233,194,122,.18);transition:background .4s,transform .4s var(--ease)}
+.ny-pl:hover{background:rgba(233,194,122,.08);transform:translateX(6px)}
+.ny-pl em{position:absolute;left:24px;top:14px;font-family:var(--en);font-size:2.8rem;font-style:italic;color:var(--gold);line-height:1.2}
+.ny-pl h3{font-family:var(--serif);font-weight:600;font-size:1.2rem;letter-spacing:.06em}
+.ny-pl p{margin:4px 0 0;font-size:.98rem}
+.ny-bowl{position:relative;width:min(300px,76vw);aspect-ratio:1;margin:0 auto 26px;display:grid;place-items:center}
+.ny-bowl svg{width:42%;position:relative;z-index:2;filter:drop-shadow(0 10px 30px rgba(233,194,122,.45))}
+.ny-bowl i{position:absolute;inset:0;border-radius:50%;border:1.5px solid var(--gold);opacity:0;animation:nywave 5.2s linear infinite}
+.ny-bowl i:nth-child(2){animation-delay:1.3s}.ny-bowl i:nth-child(3){animation-delay:2.6s}.ny-bowl i:nth-child(4){animation-delay:3.9s}
+@keyframes nywave{0%{transform:scale(.25);opacity:.9}100%{transform:scale(1);opacity:0}}
+
+/* 你會帶走／適合誰 */
+.ny-block{width:min(1080px,calc(100% - 40px));margin:0 auto;padding:90px 0 30px;text-align:center}
+.ny-gain{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:left}
+.ny-g{position:relative;padding:30px 26px;border-radius:24px;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid rgba(233,194,122,.18);overflow:hidden;transition:transform .5s var(--ease),border-color .5s}
+.ny-g::before{content:"";position:absolute;inset:-1px;background:radial-gradient(circle at 50% 0,rgba(233,194,122,.25),transparent 60%);opacity:0;transition:opacity .5s}
+.ny-g:hover{transform:translateY(-6px);border-color:rgba(233,194,122,.5)}
+.ny-g:hover::before{opacity:1}
+.ny-g i{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;font-style:normal;font-size:1.3rem;color:var(--night);background:linear-gradient(135deg,var(--gold2),var(--gold))}
+.ny-g h3{font-family:var(--serif);font-weight:600;font-size:1.18rem;margin:16px 0 6px}
+.ny-g p{font-size:.96rem;color:#DCCFDD}
+.ny-for{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;text-align:left}
+.ny-for li{position:relative;padding:18px 22px 18px 54px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(233,194,122,.14)}
+.ny-for li::before{content:"✓";position:absolute;left:20px;top:17px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;line-height:1;color:var(--night);background:var(--gold)}
+
+/* 報名票券 */
+.ny-join{width:min(1000px,calc(100% - 40px));margin:0 auto;padding:90px 0 30px}
+.ny-ticket{display:grid;grid-template-columns:1.3fr .7fr;border-radius:30px;overflow:hidden;background:linear-gradient(135deg,#3A1C4F,#5A1E48);border:1px solid rgba(233,194,122,.35);box-shadow:0 40px 100px rgba(0,0,0,.45)}
+.ny-tl{padding:44px 44px 40px;position:relative}
+.ny-tl::after{content:"";position:absolute;right:0;top:20px;bottom:20px;border-right:2px dashed rgba(233,194,122,.35)}
+.ny-tl h2{margin:.1em 0 0!important;font-weight:900!important;background:linear-gradient(180deg,#FFF3D2,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.ny-tsub{font-family:var(--serif);letter-spacing:.08em;margin-bottom:22px}
+.ny-tl dl{display:grid;grid-template-columns:auto 1fr;gap:10px 20px;margin-bottom:28px}
+.ny-tl dt{color:var(--gold);letter-spacing:.2em;font-weight:400}
+.ny-tr img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+
+/* 收尾：從夜空過渡回品牌首頁 */
+.ny-final{text-align:center;font-family:var(--serif);font-size:clamp(1.2rem,3vw,1.6rem);line-height:2;padding:80px 20px 230px;color:#E6DAE6}
+.ny-final b{display:block;font-weight:900;font-size:1.4em;letter-spacing:.1em;color:var(--gold2);text-shadow:0 0 40px rgba(233,194,122,.5)}
+
+/* 導覽列上的主打入口 */
+.nav nav a.ny-nav{color:#7A1E4B;font-weight:500}
+.nav nav a.ny-nav::before{content:"✦ "}
+.tabbar a.ny-tab{color:#7A1E4B;font-weight:500}
+
+@media (max-width:820px){
+  .ny-hero{grid-template-columns:1fr;gap:30px;padding-top:96px;text-align:center}
+  .ny-poster{order:-1;width:min(320px,76vw);margin:0 auto}
+  .ny-kicker,.ny-facts,.ny-cta,.ny-cd{justify-content:center}
+  .ny-scroll{margin-top:0}
+  .ny-ch{grid-template-columns:1fr;gap:18px;padding:64px 0}
+  .ny-mark{position:static;display:flex;align-items:center;gap:14px;text-align:left}
+  .ny-mark b{width:70px;height:70px;font-size:2rem;margin:0}
+  .ny-gain,.ny-for,.ny-ticket{grid-template-columns:1fr}
+  .ny-tl{padding:32px 24px}
+  .ny-tl::after,.ny-tr{display:none}
+  .ny-pl{padding-left:76px}
+  .ny-pl em{left:18px;font-size:2.3rem}
+}
+@media (prefers-reduced-motion:reduce){
+  #newyear *,#newyear *::before,#newyear *::after{animation:none!important}
+  .ny-title span{opacity:1;transform:none}
+}

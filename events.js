@@ -29,7 +29,7 @@ window.HSS_EVENTS = [
       "2027 新年第一天，把第一個下午留給自己。在不丹法王的加持中迎接新的一年，以虔誠心意為自己與所愛的人祈願，再伴著缽音放慢呼吸，聽見心裡的聲音。",
     image: "assets/events/2027-01-01_universe-loves-you.webp",
     tags: ["新年好運・祈福順遂", "功德主加持・緣分善轉", "缽音療癒・回歸平靜"],
-    link: "newyear-2027.html",
+    link: "#newyear",
     linkText: "看完整介紹",
     featured: true,
   },
