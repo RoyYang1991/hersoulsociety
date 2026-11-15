@@ -1,14 +1,14 @@
 /* ───── 首頁第一屏：主打活動（2027 新年音樂會）
    配色取自海報：夜紫、絲絨酒紅、金。所有樣式都限定在 #newyear 底下，不影響其他區塊。 ───── */
 #newyear{
-  --night:#170F2B; --gold:#E9C27A; --gold2:#F7E2B0; --cream:#F6EEF3; --soft:#C9B8D2; --magenta:#C2457E;
+  --night:#2B0E18; --gold:#E9C27A; --gold2:#F7E2B0; --cream:#F6EEF3; --soft:#C9B8D2; --magenta:#C2457E;
   position:relative;overflow:clip;color:var(--cream);
-  background:linear-gradient(180deg,#170F2B 0%,#2C1A45 30%,#3D1C48 70%,#4A1D45 92%,#FBF6F1 100%);
+  background:linear-gradient(180deg,#2B0E18 0%,#3C121E 30%,#5C1A2A 70%,#7A2A38 92%,#FBF6F1 100%);
 }
 #newyear .ny-sky{position:absolute;inset:0;pointer-events:none;filter:blur(80px)}
 #newyear .ny-sky i{position:absolute;border-radius:50%;opacity:.5}
-#newyear .ny-sky i:nth-child(1){width:50vw;height:50vw;left:-12vw;top:-8vw;background:#5B2E8C;animation:nyd1 26s ease-in-out infinite alternate}
-#newyear .ny-sky i:nth-child(2){width:44vw;height:44vw;right:-12vw;top:22%;background:#B23A6E;animation:nyd2 30s ease-in-out infinite alternate}
+#newyear .ny-sky i:nth-child(1){width:50vw;height:50vw;left:-12vw;top:-8vw;background:#8A2440;animation:nyd1 26s ease-in-out infinite alternate}
+#newyear .ny-sky i:nth-child(2){width:44vw;height:44vw;right:-12vw;top:22%;background:#B8405A;animation:nyd2 30s ease-in-out infinite alternate}
 #newyear .ny-sky i:nth-child(3){width:40vw;height:40vw;left:20vw;top:58%;background:#C98A3A;opacity:.28;animation:nyd1 34s ease-in-out infinite alternate-reverse}
 @keyframes nyd1{to{transform:translate(12vw,10vh) scale(1.15)}}
 @keyframes nyd2{to{transform:translate(-14vw,-8vh) scale(.9)}}
@@ -104,7 +104,7 @@ body.loading .ny-title span{animation-play-state:paused}
 
 /* 報名票券 */
 .ny-join{width:min(1000px,calc(100% - 40px));margin:0 auto;padding:90px 0 30px}
-.ny-ticket{display:grid;grid-template-columns:1.3fr .7fr;border-radius:30px;overflow:hidden;background:linear-gradient(135deg,#3A1C4F,#5A1E48);border:1px solid rgba(233,194,122,.35);box-shadow:0 40px 100px rgba(0,0,0,.45)}
+.ny-ticket{display:grid;grid-template-columns:1.3fr .7fr;border-radius:30px;overflow:hidden;background:linear-gradient(135deg,#4E1626,#701E32);border:1px solid rgba(233,194,122,.35);box-shadow:0 40px 100px rgba(0,0,0,.45)}
 .ny-tl{padding:44px 44px 40px;position:relative}
 .ny-tl::after{content:"";position:absolute;right:0;top:20px;bottom:20px;border-right:2px dashed rgba(233,194,122,.35)}
 .ny-tl h2{margin:.1em 0 0!important;font-weight:900!important;background:linear-gradient(180deg,#FFF3D2,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
