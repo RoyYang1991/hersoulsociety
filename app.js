@@ -90,14 +90,16 @@
 
   /* ── 導覽列目前區塊 ── */
   const links = $$(".nav nav a, .tabbar a");
+  const spied = $$("main section[id]"), live = new Set(); // 形象影片包在主打活動裡面，所以取「正在畫面中央、而且排在最後面」的那一段
   const spy = new IntersectionObserver(
-    (es) =>
-      es.forEach((e) => {
-        if (e.isIntersecting) links.forEach((a) => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id));
-      }),
+    (es) => {
+      es.forEach((e) => (e.isIntersecting ? live.add(e.target) : live.delete(e.target)));
+      const cur = spied.filter((s) => live.has(s)).pop();
+      if (cur) links.forEach((a) => a.classList.toggle("on", a.getAttribute("href") === "#" + cur.id));
+    },
     { rootMargin: "-45% 0px -50% 0px" }
   );
-  $$("main section[id]").forEach((s) => spy.observe(s));
+  spied.forEach((s) => spy.observe(s));
 
   /* ── 捲動連動：進度條、時間軸畫線、影片放大 ── */
   /* ── 角落輪播的小提示 ── */

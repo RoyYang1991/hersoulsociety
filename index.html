@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@400;600;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="feature.css">
+<link rel="stylesheet" href="onepage.css">
 </head>
 <body class="loading">
 
@@ -30,6 +31,9 @@
 </div>
 
 
+<!-- 全站固定底圖：暖金清晨（樣式在 onepage.css，捲動連動在 onepage.js） -->
+<div id="scene" aria-hidden="true"><img src="assets/scene/morning.webp" alt=""><i class="tint"></i><i class="wash"></i></div>
+
 <div class="aurora" aria-hidden="true">
   <i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i><i class="orb o4"></i>
 </div>
@@ -44,10 +48,10 @@
   </a>
   <nav>
     <a href="#newyear" class="ny-nav">1/1 音樂會</a>
+    <a href="#film">形象影片</a>
     <a href="#about">關於我們</a>
     <a href="#now">進行中</a>
     <a href="#past">過去活動</a>
-    <a href="#film">形象影片</a>
     <a href="#contact" class="pill">聯絡與追蹤</a>
   </nav>
 </header>
@@ -55,10 +59,10 @@
 <!-- 手機底部分頁列 -->
 <nav class="tabbar" aria-label="分頁">
   <a href="#newyear" class="ny-tab">1/1</a>
+  <a href="#film">影片</a>
   <a href="#about">關於</a>
   <a href="#now">進行中</a>
   <a href="#past">足跡</a>
-  <a href="#film">影片</a>
   <a href="#contact">聯絡</a>
 </nav>
 
@@ -105,6 +109,21 @@
       </div>
     </div>
     <a class="ny-scroll fade" style="--d:2.2s" href="#ny-rise">Scroll ↓</a>
+
+    <!-- 形象影片：接在第一屏之後 -->
+    <section class="film" id="film" data-en="Brand Film" data-zh="形象影片" data-tip="先相信，然後看見。">
+      <div class="wrap">
+        <p class="label reveal">Brand Film ・ 形象影片</p>
+        <h2 class="reveal">用一分半鐘，認識我們</h2>
+        <p class="tip reveal">先相信，然後看見。</p>
+      </div>
+      <div class="film-frame" id="filmFrame">
+        <video id="filmVideo" src="assets/brand-film.mp4" poster="assets/film-poster.jpg" preload="none" playsinline></video>
+        <button class="play" id="filmPlay" aria-label="播放形象影片">
+          <svg viewBox="0 0 24 24" width="30" height="30"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+        </button>
+      </div>
+    </section>
 
     <p class="ny-lead reveal">新的一年，<br>從被祝福開始。</p>
 
@@ -274,21 +293,6 @@
     <div class="timeline" id="pastList"><i class="line"><b></b></i></div>
   </section>
 
-  <!-- 形象影片 -->
-  <section class="film" id="film" data-en="Brand Film" data-zh="形象影片" data-tip="先相信，然後看見。">
-    <div class="wrap">
-      <p class="label reveal">Brand Film ・ 形象影片</p>
-      <h2 class="reveal">用一分半鐘，認識我們</h2>
-      <p class="tip reveal">先相信，然後看見。</p>
-    </div>
-    <div class="film-frame" id="filmFrame">
-      <video id="filmVideo" src="assets/brand-film.mp4" poster="assets/film-poster.jpg" preload="none" playsinline></video>
-      <button class="play" id="filmPlay" aria-label="播放形象影片">
-        <svg viewBox="0 0 24 24" width="30" height="30"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
-      </button>
-    </div>
-  </section>
-
   <div class="whisper" data-text="我們只有一個心願：|讓每個人，變得更好。"></div>
 
   <!-- 聯絡 -->
@@ -321,5 +325,6 @@
 <script src="events.js"></script>
 <script src="app.js"></script>
 <script src="feature.js"></script>
+<script src="onepage.js"></script>
 </body>
 </html>

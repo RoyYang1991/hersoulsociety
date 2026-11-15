@@ -1,0 +1,41 @@
+/* ───── 一頁式連續感：全站共用一張固定底圖（暖金清晨）。
+   主打活動段落是蓋在底圖上的夜色，越往下越透，最後整個化開成清晨；
+   之後各段落都浮在同一張底圖上，色調由破曉的粉紫慢慢轉成暖金。
+   這個檔案只做覆蓋，拿掉它（和 onepage.js、#scene）就回到原本的樣子。 ───── */
+:root{--muted:#6A586E}
+body{background:#F6E3C4}
+
+#scene{position:fixed;left:0;top:0;width:100%;height:100vh;height:100lvh;z-index:-5;overflow:hidden;pointer-events:none;background:#F6DDB4}
+#scene img{width:100%;height:100%;object-fit:cover;object-position:32% 60%;
+  transform:translate3d(0,calc((1 - var(--p,1))*5%),0) scale(1.12);will-change:transform}
+/* 破曉的粉紫：剛離開夜色時最濃，一路淡到看不見 */
+#scene .tint{position:absolute;inset:0;opacity:calc(1 - var(--dawn,1));
+  background:linear-gradient(180deg,rgba(126,104,178,.6),rgba(206,150,182,.5) 55%,rgba(238,184,160,.34))}
+/* 薄薄一層米白，讓深色文字在底圖上讀得清楚；下方留給花草 */
+#scene .wash{position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,246,241,.56),rgba(251,246,241,.36) 55%,rgba(251,246,241,.12))}
+
+/* 原本的流動色塊改成淡淡的光霧，不蓋住底圖 */
+.aurora{opacity:.32}
+
+/* 主打活動：夜色越往下越透，最後化開，露出後面的清晨 */
+#newyear{background:linear-gradient(180deg,
+  #170F2B 0,#170F2B 100svh,
+  rgba(36,21,60,.95) 34%,
+  rgba(54,27,74,.88) 68%,
+  rgba(72,31,76,.8) calc(100% - 420px),
+  rgba(86,40,84,.5) calc(100% - 190px),
+  rgba(120,70,110,0) 100%)}
+.ny-final{padding-bottom:440px}
+
+/* 段落之間不留硬邊 */
+.marquee{background:rgba(255,253,251,.3);border-block-color:rgba(255,255,255,.55)}
+footer{border-top-color:rgba(255,255,255,.6)}
+.hero .lead,.about-text p:not(.label),.contact .sub{text-shadow:0 0 18px rgba(255,250,240,.9)}
+.whisper .c{color:rgba(58,42,60,.2)}
+
+@media (max-width:820px){
+  #scene img{object-position:24% 60%}
+}
+@media (prefers-reduced-motion:reduce){
+  #scene img{transform:scale(1.02)}
+}
